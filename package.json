@@ -1,0 +1,41 @@
+{
+  "name": "cropper.js",
+  "version": "0.0.1",
+  "description": "使用 JavaScript 创建的一个简单轻量的图片裁剪器。",
+  "main": "index.js",
+  "scripts": {
+    "prepare": "husky install",
+    "commit": "git-cz"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "@commitlint/cli": "^12.1.1",
+    "@commitlint/config-conventional": "^12.1.1",
+    "commitizen": "^4.2.3",
+    "cz-conventional-changelog": "^3.3.0",
+    "husky": "^6.0.0"
+  },
+  "keywords": [
+    "cropper"
+  ],
+  "config": {
+    "commitizen": {
+      "path": "cz-conventional-changelog"
+    }
+  },
+  "commitlint": {
+    "extends": [
+      "@commitlint/config-conventional"
+    ]
+  },
+  "author": "Kisstar",
+  "homepage": "https://github.com/kisstar/cropper.js#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kisstar/cropper.js.git"
+  },
+  "bugs": {
+    "url": "https://github.com/kisstar/cropper.js/issues"
+  },
+  "license": "MIT"
+}
