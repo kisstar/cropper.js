@@ -2,8 +2,16 @@
   "name": "cropper.js",
   "version": "0.0.1",
   "description": "使用 JavaScript 创建的一个简单轻量的图片裁剪器。",
-  "main": "index.js",
+  "main": "dist/cropper.umd.js",
+  "module": "dist/cropper.es.js",
+  "typings": "dist/types/cropper.d.ts",
+  "files": [
+    "dist"
+  ],
   "scripts": {
+    "prebuild": "rimraf dist",
+    "start": "rollup -c -w",
+    "build": "tsc --module commonjs && cross-env NODE_ENV=production rollup -c",
     "prepare": "husky install",
     "commit": "git-cz"
   },
@@ -11,9 +19,18 @@
   "devDependencies": {
     "@commitlint/cli": "^12.1.1",
     "@commitlint/config-conventional": "^12.1.1",
+    "@rollup/plugin-commonjs": "^18.0.0",
+    "@rollup/plugin-json": "^4.1.0",
+    "@rollup/plugin-node-resolve": "^11.2.1",
+    "@rollup/plugin-typescript": "^8.2.1",
     "commitizen": "^4.2.3",
+    "cross-env": "^7.0.3",
     "cz-conventional-changelog": "^3.3.0",
-    "husky": "^6.0.0"
+    "husky": "^6.0.0",
+    "rimraf": "^3.0.2",
+    "rollup": "^2.44.0",
+    "rollup-plugin-serve": "^1.1.0",
+    "typescript": "^4.2.3"
   },
   "keywords": [
     "cropper"
