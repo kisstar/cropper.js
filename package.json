@@ -16,6 +16,8 @@
     "build:css": "sass --load-path='./' --no-source-map src/css/index.scss dist/cropper.css",
     "watch:js": "rollup -c -w",
     "watch:css": "npm run build:css -- --watch",
+    "lint": "npm-run-all lint:*",
+    "lint:css": "stylelint 'src/css/*.scss'",
     "lint:js": "eslint ./src/js --ext .js,.ts",
     "prepare": "husky install",
     "commit": "git-cz"
@@ -42,13 +44,16 @@
     "rollup": "^2.44.0",
     "rollup-plugin-serve": "^1.1.0",
     "sass": "^1.32.8",
+    "stylelint": "^13.12.0",
+    "stylelint-config-twbs-bootstrap": "^2.1.0",
     "typescript": "^4.2.3"
   },
   "keywords": [
     "cropper"
   ],
   "lint-staged": {
-    "./src/js/*.{js,ts}": "eslint"
+    "./src/js/*.{js,ts}": "eslint",
+    "./src/css/*.{css,scss}": "stylelint --syntax=scss"
   },
   "config": {
     "commitizen": {
