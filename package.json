@@ -21,7 +21,8 @@
     "lint:js": "eslint . --ext .js,.ts",
     "lint:prettier": "prettier --check \"src/**\"",
     "prepare": "husky install",
-    "commit": "git-cz"
+    "commit": "git-cz",
+    "release": "standard-version"
   },
   "dependencies": {},
   "devDependencies": {
@@ -48,6 +49,7 @@
     "rollup": "^2.44.0",
     "rollup-plugin-serve": "^1.1.0",
     "sass": "^1.32.8",
+    "standard-version": "^9.2.0",
     "stylelint": "^13.12.0",
     "stylelint-config-prettier": "^8.0.2",
     "stylelint-config-twbs-bootstrap": "^2.1.0",
