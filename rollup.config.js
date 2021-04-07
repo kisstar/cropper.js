@@ -9,18 +9,26 @@ const isProduction = process.env.NODE_ENV === 'production';
 const isDevelopment = !isProduction;
 
 export default {
-  input: 'src/js/index.ts',
+  input: 'src/index.ts',
   output: [
     isProduction && { file: pkg.module, format: 'es', sourcemap: true },
     {
       file: pkg.main,
-      name: 'cropper',
+      name: pkg.name
+        .split('-')
+        .map((item, index) => {
+          if (index > 0) {
+            return item.charAt(0).toUpperCase() + item.slice(1);
+          }
+          return item;
+        })
+        .join(''),
       format: 'umd',
       sourcemap: true,
     },
   ].filter(Boolean),
   watch: {
-    include: 'src/js/**',
+    include: 'src/',
   },
   plugins: [
     typescript(),

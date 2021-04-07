@@ -1,10 +1,10 @@
 {
-  "name": "cropper.js",
+  "name": "package-name",
   "version": "0.0.1",
-  "description": "使用 JavaScript 创建的一个简单轻量的图片裁剪器。",
-  "main": "dist/cropper.umd.js",
-  "module": "dist/cropper.es.js",
-  "typings": "dist/types/cropper.d.ts",
+  "description": "Rollup project integrating TypeScript and Sass.",
+  "main": "dist/package-name.umd.js",
+  "module": "dist/package-name.es.js",
+  "typings": "dist/types/package-name.d.ts",
   "files": [
     "dist"
   ],
@@ -13,11 +13,11 @@
     "prebuild": "rimraf dist",
     "build": "npm-run-all -p build:*",
     "build:js": "tsc --module commonjs && cross-env NODE_ENV=production rollup -c",
-    "build:css": "sass --load-path='./' --no-source-map src/css/index.scss dist/cropper.css",
+    "build:css": "sass --load-path='./' --no-source-map src/style/index.scss dist/package-name.css",
     "watch:js": "rollup -c -w",
     "watch:css": "npm run build:css -- --watch",
     "lint": "npm-run-all lint:*",
-    "lint:css": "stylelint 'src/css/*.scss' 'public/*.css'",
+    "lint:css": "stylelint 'src/**/*.scss'",
     "lint:js": "eslint . --ext .js,.ts",
     "lint:prettier": "prettier --check \"src/**\"",
     "prepare": "husky install",
@@ -53,12 +53,10 @@
     "stylelint-config-twbs-bootstrap": "^2.1.0",
     "typescript": "^4.2.3"
   },
-  "keywords": [
-    "cropper"
-  ],
+  "keywords": [],
   "lint-staged": {
-    "./src/js/*.{js,ts}": "eslint",
-    "./src/css/*.{css,scss}": "stylelint --syntax=scss",
+    "./src/*.{js,ts}": "eslint",
+    "./src/*.{css,scss}": "stylelint --syntax=scss",
     "**/*.{js,ts,css,scss,md,json}": "prettier --write"
   },
   "config": {
@@ -70,15 +68,6 @@
     "extends": [
       "@commitlint/config-conventional"
     ]
-  },
-  "author": "Kisstar",
-  "homepage": "https://github.com/kisstar/cropper.js#readme",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/kisstar/cropper.js.git"
-  },
-  "bugs": {
-    "url": "https://github.com/kisstar/cropper.js/issues"
   },
   "license": "MIT"
 }

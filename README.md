@@ -1,3 +1,3 @@
-# cropper.js
+# rollup-typescript-scss
 
-使用 JavaScript 创建的一个简单轻量的图片裁剪器。
+Rollup project integrating TypeScript and Sass.
